@@ -19,7 +19,7 @@ print("利用doc2sim做文本相似")
 
 
 def get_corpus():
-    connect = pymysql.Connect(host='10.10.50.155', port=3316, user='root',
+    connect = pymysql.Connect(host='10.10.50.15', port=3316, user='root',
                               passwd="123456", db="recommendtext", charset='utf8')
     # 获取游标
     cursor = connect.cursor()
@@ -59,7 +59,6 @@ corpus = [dictionary.doc2bow(text) for text in corpus_documents]
 # num_features:为语料库的特征数（比如：字典大小，或者lsi的主题数等）
 similarity = Similarity('-Similarity-index', corpus, num_features=400)
 
-#test_data = "查找关于中国南方电网公司子系统下的移动终端版本管理从今天起的菜单数量统计"
 test_data = "昨天北京交通情况？"
 cut_data = tokenrow(test_data)
 test_corpus = dictionary.doc2bow(cut_data)
