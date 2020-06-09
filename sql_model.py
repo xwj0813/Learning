@@ -174,7 +174,7 @@ def trainmodel(trainlog, file):
     for i in range(len(corpus)):
         corpuslist.append(tokenrow(corpus[i]))
 
-    #[['查找', ' ', '基建', '项目', '管理子系统', '下', ' ', '主网', '基建投资', '计划', '管理', '后天', '菜单', '数量', '统计', '\n']]
+    #[['查找', ' ', '基建', '项目', '管理子系统', '下', ' ', , '基建投资', '计划', '管理', '后天', '菜单', '数量', '统计', '\n']]
     # 将分割语料存入库中
     flag = saveSQL(1, load_dict)
     # step2 训练模型
@@ -394,11 +394,11 @@ def main():
 if __name__ == '__main__':
 
     main()
-    #     text = "查找关于中国南方电网公司子系统下的移动终端版本管理从今天起的菜单数量统计"
+    #     text = "查找关于移动终端版本管理从今天起的菜单数量统计"
     #     model, corpus = trainall()
     #     result = runmodel(model, corpus, text)
     #     print(result)
-    #     tecp = {0: "昨天中国南网有多少人在线？"}
+    #     tecp = {0: "昨有多少人在线？"}
     #     saveSQL(1, tecp)
     #     with open("./data/newdatasets.json", 'r', encoding='utf-8') as f:
     #         load_f = json.load(f)
